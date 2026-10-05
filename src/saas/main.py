@@ -1,3 +1,4 @@
+from saas.ops import router as ops_router
 from datetime import datetime, timezone
 
 from fastapi import FastAPI, Header, HTTPException
@@ -6,6 +7,7 @@ from pydantic import BaseModel, Field
 from saas import auth
 
 app = FastAPI(title="Multi-tenant records")
+app.include_router(ops_router, prefix="/v1")
 RECORDS = []
 AUDIT = []
 

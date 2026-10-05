@@ -78,3 +78,7 @@ The code works once. A replay, a wrong verifier, an unregistered redirect, or a 
 | `POST /records` | create. The record is stamped with the caller's tenant, never the body's |
 | `DELETE /records/{id}` | delete. Another tenant's id is 404 |
 | `GET /audit` | audit. Only this tenant's create and delete events |
+
+## Ops plane
+
+Workspaces, tenant isolation, job approval, and audit live under `/v1`. Production apply is refused. See `docs/ARCHITECTURE.md`.
